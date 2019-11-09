@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp"
+        tools:context="com.weatherstation.weatherstation.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/linearLayout"
+            android:baselineAligned="false">
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="2dp"
+                app:cardUseCompatPadding="true"
+                card_view:contentPaddingLeft="4dp"
+                card_view:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:id="@+id/deviceIDHolder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+
+                        android:layout_marginStart="10dp"
+                        android:text="@string/device"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/time"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="6dp"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/deviceIDHolder"
+                        android:text="@string/mgh0"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/deviceIDHolder"
+                        android:text="@string/date_time"
+                        android:textColor="@color/md_black_1000"
+                        android:layout_marginStart="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/deviceIDHolder"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/date"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/latestUpdate"
+                        android:layout_marginStart="85dp"
+                        android:layout_toEndOf="@+id/textView4"
+                        android:text="@string/date"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/deviceIDHolder"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/time"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/updated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/timeValue"
+                        android:text="@string/updated"
+                        android:textColor="@color/md_black_1000"
+                        android:layout_marginStart="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/latestUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/timeValue"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/updated"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="2dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_height="match_parent"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/moistureimg"
+                        android:layout_width="100dp"
+                        android:paddingBottom="10dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        app:srcCompat="@drawable/moisture"
+                        tools:ignore="ContentDescription" />
+
+    <!--                <com.weatherstation.weatherstation.Gauge
+                        android:id="@+id/gaugeMoisture"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        app:gaugeStartValue="0"
+                        app:gaugeEndValue="1000"
+                        app:gaugePointEndColor="@color/md_blue_A700"
+                        app:gaugePointStartColor="@color/md_blue_400"
+                        app:gaugeStartAngle="130"
+                        app:gaugeStrokeCap="ROUND"
+                        app:gaugeStrokeColor="@color/md_grey_350"
+                        app:gaugeStrokeWidth="10dp"
+                        app:gaugeSweepAngle="280" />-->
+
+                    <TextView
+                        android:id="@+id/moistureValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/_0"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/moisture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/moisture"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_height="match_parent"
+                    tools:ignore="UselessParent">
+
+    <!--                <com.weatherstation.weatherstation.Gauge
+                        android:id="@+id/gaugeHumidity"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        app:gaugePointEndColor="@color/google_green"
+                        app:gaugePointStartColor="@color/google_green"
+                        app:gaugeStartAngle="130"
+                        app:gaugeStartValue="0"
+                        app:gaugeEndValue="100"
+                        app:gaugeStrokeCap="ROUND"
+                        app:gaugeStrokeColor="@color/md_grey_350"
+                        app:gaugeStrokeWidth="10dp"
+                        app:gaugeSweepAngle="275" />-->
+
+                    <ImageView
+                        android:id="@+id/gaugeHumidity"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:paddingBottom="5dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        app:srcCompat="@drawable/humidity"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/humidityValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/_0"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/humidity"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+        <!--                <com.weatherstation.weatherstation.Gauge
+                            android:id="@+id/gaugeTemperature"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            app:gaugePointEndColor="@color/google_red"
+                            app:gaugePointStartColor="@color/google_red"
+                            app:gaugeStartAngle="135"
+                            app:gaugeStartValue="-5"
+                            app:gaugeEndValue="100"
+                            app:gaugeStrokeCap="ROUND"
+                            app:gaugeStrokeColor="@color/md_grey_350"
+                            app:gaugeStrokeWidth="10dp"
+                            app:gaugeSweepAngle="270" />-->
+
+                        <ImageView
+                            android:id="@+id/temperatureimg"
+                            android:layout_width="100dp"
+                            android:paddingBottom="10dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            app:srcCompat="@drawable/temperature"
+                            tools:ignore="ContentDescription" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/temperatureC"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toStartOf="@+id/line"
+                                android:text="@string/c"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/temperatureValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toStartOf="@+id/temperatureC"
+                                android:text="@string/_0"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/temperatureValueF"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@+id/line"
+                                android:text="@string/_0"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/line"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/line"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/temperatureF"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@+id/temperatureValueF"
+                                android:text="@string/f"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/temperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:text="@string/temperature"
+                            android:textAppearance="@style/TextAppearance.AppCompat"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/soil"
+                            android:layout_width="100dp"
+                            android:paddingBottom="10dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            app:srcCompat="@drawable/soil_temperature"
+                            tools:ignore="ContentDescription" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/soilTempCen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toStartOf="@+id/line2"
+                                android:text="@string/c"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/soilTempValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toStartOf="@+id/soilTempCen"
+                                android:text="@string/_0"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/soildTempFaren"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@+id/line2"
+                                android:text="@string/_0"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/line2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/line"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/soilTempValueF"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@+id/soildTempFaren"
+                                android:text="@string/f"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/soilTTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:text="@string/soil_temperature"
+                            android:textAppearance="@style/TextAppearance.AppCompat"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/relayStat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/relay_status"
+                        android:textColor="@color/text_color"
+                        android:textSize="15sp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:layout_weight="0.70"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/relayStatValue"
+                        android:textColor="#757575"
+                        android:layout_weight="0.30"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
